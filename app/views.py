@@ -191,7 +191,7 @@ def cadastro(request):
     return render(request, 'app/cadastro.html', context)
 
 def cadastrocurso(request):
-    form = UserModelForm(request.POST)
+    form = CursoForm(request.POST)
     context = {'form':form}
     if request.method == 'POST':
         if form.is_valid():
