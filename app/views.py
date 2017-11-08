@@ -179,17 +179,3 @@ def novo_usuario(request):
             'year':datetime.now().year,
         })
     )
-'''
-def novo_usuario(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/novo_usuario.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Novo usuario',
-            'message':'Novo usuario',
-            'year':datetime.now().year,
-        })
-    )
-'''
