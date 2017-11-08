@@ -10,7 +10,7 @@ mysqlconndict = dict(s.split('=',1) for s in mysqlconnlst)
 
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
