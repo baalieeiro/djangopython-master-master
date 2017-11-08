@@ -11,7 +11,7 @@ def base(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'base.html',
+        'app/base.html',
         context_instance = RequestContext(request,
         {
             'title':'Pagina inicial - Base',
