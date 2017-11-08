@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de colaborador</h1>
+</div>
+
+<table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Cargo</th>
+    </tr>
+        {% for colaborador in colaboradores %}
+          <tr>
+            <td>{{ colaborador.nome }}</td>
+            <td>{{ colaborador.cargo }}</td>
+          </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}

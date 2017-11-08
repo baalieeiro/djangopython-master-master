@@ -1,0 +1,112 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de colaborador</h1>
+</div>
+
+<form method="post" action="cadastro_colaborador">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do colaborador</legend>
+      <table cellspacing="2">
+        <tr>
+          <td>
+
+            <label for="nome">Nome: </label>
+          </td>
+          <td align="left">
+            <input id="nome" type="text" name="nome" value="{{ colaborador.nome }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <label for="data_nascimento">Data de nascimento: </label>
+          </td>
+          <td align="left">
+            <input id="data_nascimento" type="text" name="data_nascimento" value="{{ colaborador.data_nascimento }}" size="15" maxlength="15"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+            <label for="email">Email: </label>
+          </td>
+          <td>
+            <input id="email" type="text" name="email" value="{{ colaborador.email }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="endereco">Endereço: </label>
+          </td>
+          <td align="left">
+            <input id="endereco" type="text" name="endereco" value="{{ colaborador.endereco }}" maxlength="200" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="cidade">Cidade: </label>
+          </td>
+          <td align="left">
+            <input id="cidade" type="text" name="cidade" value="{{ colaborador.cidade }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="estado">Estado: </label>
+          </td>
+          <td align="left">
+            <input id="estado" type="text" name="estado" value="{{ colaborador.estado }}" maxlength="10" size="5"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="telefone">Telefone: </label>
+          </td>
+          <td align="left">
+            <input id="telefone" type="text" name="telefone" value="{{ colaborador.telefone }}" maxlength="15" size="15"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="celular">Celular: </label>
+          </td>
+          <td>
+            <input id="celular" type="text" name="celular" value="{{ colaborador.celular }}" maxlength="15" size="15"></br>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+
+  <fieldset>
+
+    <table>
+      <legend>Dados do cargo</legend>
+      <tr>
+        <td>
+          <label for="cargo">Cargo: </label>
+        </td>
+        <td align="left">
+          <select id="cargo" name="cargo" value="{{ colaborador.cargo }}">
+            <option value="Auxiliar Administrativo">Auxiliar Administrativo</option>
+            <option value="Coordenador">Coordenador</option>
+            <option value="Professor">Professor</option>
+          </select></br>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+                    <input type="submit" value="Salvar" />
+</form>
+
+{% endblock %}

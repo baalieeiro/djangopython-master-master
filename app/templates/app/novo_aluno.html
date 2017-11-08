@@ -1,0 +1,125 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de alunos</h1>
+</div>
+
+<form method="post" action="">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do aluno</legend>
+      <table cellspacing="2">
+
+        <tr>
+          <td>
+
+            <label for="ra">Ra: </label>
+          </td>
+          <td align="left">
+            <input id="ra" type="text" name="ra" value="{{ aluno.ra }}" maxlength="100" size="10"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+
+            <label for="nome">Nome: </label>
+          </td>
+          <td align="left">
+            <input id="nome" type="text" name="nome" value="{{ aluno.nome }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <label for="data_nascimento">Data de nascimento: </label>
+          </td>
+          <td align="left">
+            <input id="data_nascimento" type="text" name="data_nascimento" value="{{ aluno.data_nascimento }}" size="15" maxlength="15"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+            <label for="email">Email: </label>
+          </td>
+          <td>
+            <input id="email" type="text" name="email" value="{{ aluno.email }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="endereco">Endereço: </label>
+          </td>
+          <td align="left">
+            <input id="endereco" type="text" name="endereco" value="{{ aluno.endereco }}" maxlength="200" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="cidade">Cidade: </label>
+          </td>
+          <td align="left">
+            <input id="cidade" type="text" name="cidade" value="{{ aluno.cidade }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="estado">Estado: </label>
+          </td>
+          <td align="left">
+            <input id="estado" type="text" name="estado" value="{{ aluno.estado }}" maxlength="10" size="5"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="telefone">Telefone: </label>
+          </td>
+          <td align="left">
+            <input id="telefone" type="text" name="telefone" value="{{ aluno.telefone }}" maxlength="15" size="15"></br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="celular">Celular: </label>
+          </td>
+          <td>
+            <input id="celular" type="text" name="celular" value="{{ aluno.celular }}" maxlength="15" size="15"></br>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+  <fieldset>
+
+    <table>
+      <legend>Dados do curso</legend>
+      <tr>
+        <td>
+          <label for="curso">Curso: </label>
+        </td>
+        <td align="left">
+          <select id="curso" name="curso" value="{{ aluno.curso }}">
+            <option value="Administração">Administração</option>
+            <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+            <option value="Banco de Dados">Banco de Dados</option>
+            <option value="Jogos Digitais">Jogos Digitais</option>
+            <option value="Produção Multimídia">Produção Multimídia</option>
+            <option value="Redes de Computadores">Redes de Computadores</option>
+            <option value="Sistemas de Informação">Sistemas de Informação</option>
+          </select></br>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+                    <input type="submit" value="Salvar" />
+</form>
+{% endblock %}

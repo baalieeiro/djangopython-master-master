@@ -1,0 +1,59 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de curso</h1>
+</div>
+
+<form method="post" action="">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do curso</legend>
+      <table cellspacing="2">
+
+        <tr>
+          <td>
+
+            <label for="nome">Nome do curso: </label>
+          </td>
+          <td align="left">
+            <input id="nome" type="text" name="nome" value="{{ curso.nome }}" maxlength="100" size="35"></br>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <label for="instituicao">Instituição: </label>
+          </td>
+          <td align="left">
+            <input id="instituicao" type="text" name="instituicao" value="{{ curso.instituicao }}" size="15" maxlength="15"></br>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+
+  <fieldset>
+
+    <table>
+      <legend>Dados do periodo</legend>
+      <tr>
+        <td>
+          <label for="periodo">Periodo: </label>
+        </td>
+        <td align="left">
+          <select id="periodo" name="periodo" value="{{ curso.periodo }}">
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noite">Noite</option>
+            <option value="Integral">Integral</option>
+          </select></br>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+                    <input type="submit" value="Salvar" />
+</form>
+{% endblock %}
