@@ -124,7 +124,7 @@ ROOT_URLCONF = 'django_get_started.urls'
 WSGI_APPLICATION = 'django_get_started.wsgi.application'
 
 TEMPLATE_DIRS = (
-    BASE_DIR + '/templates'
+    [BASE_DIR + '/templates']
 )
 
 INSTALLED_APPS = (
