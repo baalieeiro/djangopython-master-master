@@ -178,10 +178,10 @@ def cadastro(request):
             form.save()
     return render(request, 'app/cadastro.html', context)
 
-def novo_curso(request):
+def acicionar_curso(request):
     form = CursoForm(request.POST)
     context = {'form':form}
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-    return render(request, 'app/novo_curso.html', context)
+    return render(request, 'app/adicionar_curso.html', context)

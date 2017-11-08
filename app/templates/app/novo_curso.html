@@ -3,21 +3,61 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Cadastro de curso</h1>
+    <h1>Cadastro de colaborador</h1>
 </div>
 
+<form method="post" action="{% url 'adicionar_curso' %}">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do curso</legend>
+      <table cellspacing="2">
 
-<form action="{% url 'novo_curso' %}">
-    <label>nome</label>
-    {{ form.nome }}
+        <tr>
+          <td>
+            <label for="nome">Nome: </label>
+          </td>
+          <td align="left">
+            <input id="nome" type="text" name="nome" value="{{ form.nome }}"></br>
+          </td>
+        </tr>
 
 
-    <label>periodo</label>
-    {{ form.periodo }}
+                <tr>
+                  <td>
+                    <label for="instituicao">Instituicao: </label>
+                  </td>
+                  <td align="left">
+                    <input id="instituicao" type="text" name="instituicao" value="{{ form.instituicao }}"></br>
+                  </td>
+                </tr>
 
+      </table>
+    </fieldset>
 
-    <label>instituicao</label>
-    {{ form.instituicao }}
-  <button type="submit" value="Salvar"></button>
+  <fieldset>
+
+    <table>
+      <legend>Dados do periodo</legend>
+      <tr>
+        <td>
+          <label for="periodo">Periodo: </label>
+        </td>
+        <td align="left">
+          <select id="periodo" name="periodo" value="{{ form.periodo }}">
+            <option value="Manhã">Manhã</option>
+            <option value="Noite">Noite</option>
+          </select></br>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <table>
+    <tr>
+      <td>
+          <input type="submit" value="Salvar" />
+      </td>
+    </tr>
+  </table>
 </form>
+
 {% endblock %}
