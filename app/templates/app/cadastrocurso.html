@@ -6,60 +6,18 @@
     <h1>Cadastro de curso</h1>
 </div>
 
-<form method="post" action="{% url 'cadastrocurso' %}">{% csrf_token %}
-  <fieldset>
-    <legend>Dados do curso</legend>
-      <table cellspacing="2">
 
-        <tr>
-          <td>
-
-            <label for="nome">Nome do curso: </label>
-          </td>
-          <td align="left">
-            <input id="nome" type="text" name="nome" value="{{ form.nome }}" maxlength="100" size="35"></br>
-          </td>
-        </tr>
+<form action="{% url 'cadastrocurso' %}">
+    <label>nome</label>
+    {{ form.nome }}
 
 
-        <tr>
-          <td>
-            <label for="instituicao">Instituição: </label>
-          </td>
-          <td align="left">
-            <input id="instituicao" type="text" name="instituicao" value="{{ form.instituicao }}" size="15" maxlength="15"></br>
-          </td>
-        </tr>
+    <label>periodo</label>
+    {{ form.periodo }}
 
-      </table>
-    </fieldset>
 
-  <fieldset>
+    <label>instituicao</label>
+    {{ form.instituicao }}
 
-    <table>
-      <legend>Dados do periodo</legend>
-      <tr>
-        <td>
-          <label for="periodo">Periodo: </label>
-        </td>
-        <td align="left">
-          <select id="periodo" name="periodo" value="{{ form.periodo }}">
-            <option value="Manhã">Manhã</option>
-            <option value="Tarde">Tarde</option>
-            <option value="Noite">Noite</option>
-            <option value="Integral">Integral</option>
-          </select></br>
-        </td>
-      </tr>
-    </table>
-  </fieldset>
-
-  <table>
-    <tr>
-      <td>
-          <input type="submit" value="Salvar" />
-      </td>
-    </tr>
-  </table>
 </form>
 {% endblock %}
