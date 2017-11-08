@@ -183,7 +183,7 @@ def novo_usuario(request):
     )
 
 def cadastro(request):
-    form = UserModelForm(request.POST or Nome)
+    form = UserModelForm(request.POST)
     context = {'form':form}
     if request.method == 'POST':
         if form.is_valid():
