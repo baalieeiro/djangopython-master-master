@@ -143,19 +143,6 @@ def cadastro_cursos(request):
         })
     )
 
-def novo_curso(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/novo_curso.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Novo curso',
-            'message':'Novo curso',
-            'year':datetime.now().year,
-        })
-    )
-
 
 def cadastro_usuarios(request):
     assert isinstance(request, HttpRequest)
