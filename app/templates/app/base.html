@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Aplicação de Gerenciamento de Vestibulares</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/estilo.css' %}" rel="stylesheet"/>
+</head>
+
+<body>
+                <ul class="nav">
+                    <li><a href="{% url 'pagina_inicial' %}">Pagina Inicial</a></li>
+                    <li><a href="{% url 'cadastro_alunos' %}">Aluno</a></li>
+                    <li><a href="{% url 'cadastro_candidatos' %}">Candidatos</a></li>
+                    <li><a href="{% url 'cadastro_colaborador' %}">Colaborador</a></li>
+                    <li><a href="{% url 'cadastro_cursos' %}">Curso</a></li>
+                    <li><a href="{% url 'contato' %}">Contato</a></li>
+                    <li><a href="{% url 'desenvolvido' %}">Desenvolvido</a></li>
+                    <li><a href="{% url 'base' %}">Base</a></li>
+
+                </ul>
+
+{% block content %}{% endblock %}
+
+        <footer>
+            <p>&copy; {{ year }} </p>
+        </footer>
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
