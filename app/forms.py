@@ -2,6 +2,8 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.models import User
 from models import Curso
+from models import Aluno
+
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
@@ -32,3 +34,8 @@ class CursoForm(forms.ModelForm):
     class Meta:
         model = Curso
         fields = ['nome', 'periodo', 'instituicao']
+
+class AlunoForm(forms.ModelForm):
+    class Meta:
+        model = Aluno
+        fields = ['nome', 'ra', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']

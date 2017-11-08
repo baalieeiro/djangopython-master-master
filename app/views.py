@@ -62,19 +62,6 @@ def cadastro_alunos(request):
         })
     )
 
-def novo_aluno(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/novo_aluno.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Novo aluno',
-            'message':'Novo aluno',
-            'year':datetime.now().year,
-        })
-    )
-
 
 def cadastro_candidatos(request):
     assert isinstance(request, HttpRequest)
@@ -185,3 +172,11 @@ def novo_curso(request):
         if form.is_valid():
             form.save()
     return render(request, 'app/novo_curso.html', context)
+
+def novo_aluno(request):
+    form = AlunoForm(request.POST)
+    context = {'form':form}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    return render(request, 'app/novo_aluno.html', context)
