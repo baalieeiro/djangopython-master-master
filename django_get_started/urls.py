@@ -27,6 +27,8 @@ urlpatterns = patterns('',
     url(r'^cadastro_cursos', 'app.views.cadastro_cursos', name='cadastro_cursos'),
     url(r'^novo_curso', 'app.views.novo_curso', name='novo_curso'),
 
+    url(r'^cadastro$', app.views.cadastro, name='cadastro')
+
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {
