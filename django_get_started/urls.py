@@ -12,6 +12,8 @@ urlpatterns = patterns('',
 
     url(r'^$', 'app.views.pagina_inicial', name='pagina_inicial'),
 
+    url(r'^$', include('app.urls', namespace='app', app_name='app')),
+
     url(r'^contato$', 'app.views.contato', name='contato'),
     url(r'^desenvolvido', 'app.views.desenvolvido', name='desenvolvido'),
 
