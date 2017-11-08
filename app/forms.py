@@ -15,3 +15,19 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                widget=forms.PasswordInput({
                                    'class': 'form-control',
                                    'placeholder':'Password'}))
+
+
+class UserModelForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+        widgets = {
+            'first_name': forms.TextInput(attrs{
+                'maxlength': 10
+            }),
+        }
+        error_messages = {
+            'first_name': {
+                'required': 'first_name'
+            }
+        }

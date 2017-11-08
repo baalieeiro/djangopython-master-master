@@ -6,6 +6,8 @@ from app.models import Aluno
 from app.models import Candidato
 from app.models import Colaborador
 from datetime import datetime
+from app.forms import UserModelForm
+
 
 def pagina_inicial(request):
     assert isinstance(request, HttpRequest)
@@ -179,3 +181,11 @@ def novo_usuario(request):
             'year':datetime.now().year,
         })
     )
+
+def cadastro(request):
+    form = UserModelForm(request.POST or Nome)
+    context = {'form':form}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    return render(request, 'app/cadastro.html', context)

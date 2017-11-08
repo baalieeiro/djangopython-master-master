@@ -10,6 +10,8 @@ from django.conf import settings
 
 urlpatterns = patterns('',
 
+    url(r'^$', include('app.urls', namespace='app', app_name='app')),
+
     url(r'^$', 'app.views.pagina_inicial', name='pagina_inicial'),
 
     url(r'^contato$', 'app.views.contato', name='contato'),

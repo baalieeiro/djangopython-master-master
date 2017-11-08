@@ -1,0 +1,26 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<form action="{% url 'app:cadastro' %}">
+  <label>first_name</label>
+  {{ form.first_name }}
+  {{ form.first_name.error }}
+
+  <label>last_name</label>
+  {{ form.last_name }}
+  {{ form.last_name.error }}
+
+  <label>email</label>
+  {{ form.email }}
+  {{ form.email.error }}
+
+  <label>password</label>
+  {{ form.password }}
+  {{ form.password.error }}
+
+
+  <button type="submit" value="Salvar"></button>
+</form>
+
+{% endblock %}
