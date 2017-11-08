@@ -7,6 +7,7 @@ from app.models import Candidato
 from app.models import Colaborador
 from datetime import datetime
 from app.forms import UserModelForm
+from app.forms import CursoForm
 
 
 def pagina_inicial(request):
