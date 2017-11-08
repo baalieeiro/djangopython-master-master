@@ -8,7 +8,7 @@ from app.models import Colaborador
 from datetime import datetime
 from app.forms import UserModelForm
 from app.forms import CursoForm
-
+from app.forms import AlunoForm
 
 def pagina_inicial(request):
     assert isinstance(request, HttpRequest)
