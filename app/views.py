@@ -7,6 +7,18 @@ from app.models import Candidato
 from app.models import Colaborador
 from datetime import datetime
 
+def base(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/base.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Pagina inicial - Base',
+            'year':datetime.now().year,
+        })
+    )
+
 def pagina_inicial(request):
     assert isinstance(request, HttpRequest)
     return render(

@@ -10,7 +10,10 @@ from django.conf import settings
 
 urlpatterns = patterns('',
 
+    url(r'^$', 'app.views.base', name='base'),
+
     url(r'^$', 'app.views.pagina_inicial', name='pagina_inicial'),
+
     url(r'^contato$', 'app.views.contato', name='contato'),
     url(r'^desenvolvido', 'app.views.desenvolvido', name='desenvolvido'),
 
