@@ -17,7 +17,7 @@
             <label for="nome">Nome do curso: </label>
           </td>
           <td align="left">
-            <input id="nome" type="text" name="nome" value="{{ curso.nome }}" maxlength="100" size="35"></br>
+            <input id="nome" type="text" name="nome" value="{{ form.nome }}" maxlength="100" size="35"></br>
           </td>
         </tr>
 
@@ -27,7 +27,7 @@
             <label for="instituicao">Instituição: </label>
           </td>
           <td align="left">
-            <input id="instituicao" type="text" name="instituicao" value="{{ curso.instituicao }}" size="15" maxlength="15"></br>
+            <input id="instituicao" type="text" name="instituicao" value="{{ form.instituicao }}" size="15" maxlength="15"></br>
           </td>
         </tr>
 
@@ -43,7 +43,7 @@
           <label for="periodo">Periodo: </label>
         </td>
         <td align="left">
-          <select id="periodo" name="periodo" value="{{ curso.periodo }}">
+          <select id="periodo" name="periodo" value="{{ form.periodo }}">
             <option value="Manhã">Manhã</option>
             <option value="Tarde">Tarde</option>
             <option value="Noite">Noite</option>
