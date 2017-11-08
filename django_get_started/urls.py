@@ -43,6 +43,5 @@ urlpatterns = patterns('',
             'next_page': '/',
         },
         name='logout'),
-
-)
 '''
+)
