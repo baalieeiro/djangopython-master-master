@@ -181,7 +181,7 @@ def novo_aluno(request):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-    return render(request, 'app/cadastro_alunos.html', context)
+    return render(request, 'app/novo_aluno.html', context)
 
 def novo_candidato(request):
     form = CandidatoForm(request.POST)
