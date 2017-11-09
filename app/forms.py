@@ -41,7 +41,8 @@ class AlunoForm(forms.ModelForm):
     max_length=30,
     widget=forms.TextInput(
         attrs={
-            'placeholder': 'Write your name here'
+            'style': 'size: 35;',
+            'placeholder': 'Nome'
         }
     )
 )
