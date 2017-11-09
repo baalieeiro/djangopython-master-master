@@ -10,6 +10,7 @@ from app.forms import UserModelForm
 from app.forms import CursoForm
 from app.forms import AlunoForm
 from app.forms import CandidatoForm
+from app.forms import ColaboradorForm
 
 def pagina_inicial(request):
     assert isinstance(request, HttpRequest)
@@ -189,3 +190,11 @@ def novo_candidato(request):
         if form.is_valid():
             form.save()
     return render(request, 'app/novo_candidato.html', context)
+
+def novo_colaborador(request):
+    form = ColaboradorForm(request.POST)
+    context = {'form':form}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+    return render(request, 'app/novo_colaborador.html', context)
