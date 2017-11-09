@@ -37,18 +37,19 @@ class CursoForm(forms.ModelForm):
         fields = ['nome', 'periodo', 'instituicao']
 
 class AlunoForm(forms.ModelForm):
+    nome = forms.CharField(
+    max_length=30,
+    widget=forms.TextInput(
+        attrs={
+            'style': 'border-color: blue;',
+            'placeholder': 'Write your name here'
+        }
+    )
+)
     class Meta:
         model = Aluno
         fields = ['nome', 'ra', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
-        nome = forms.CharField(
-        max_length=30,
-        widget=forms.TextInput(
-            attrs={
-                'style': 'border-color: blue;',
-                'placeholder': 'Write your name here'
-            }
-        )
-    )
+
 class CandidatoForm(forms.ModelForm):
     class Meta:
         model = Candidato
