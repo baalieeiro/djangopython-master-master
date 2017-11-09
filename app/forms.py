@@ -42,5 +42,5 @@ class AlunoForm(forms.ModelForm):
 
 class CandidatoForm(forms.ModelForm):
     class Meta:
-        model = Aluno
+        model = Candidato
         fields = ['nome', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
