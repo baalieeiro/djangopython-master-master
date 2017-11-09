@@ -710,12 +710,15 @@
                     <a href="{% url 'cadastro_alunos' %}">Lista</a>
                     <a href="{% url 'novo_aluno' %}">Novo</a>
                   </div>
+                </div>
+                <div class="dropdown">
                   <button class="dropbtn">Candidato</button>
                   <div class="dropdown-content">
                     <a href="{% url 'cadastro_candidatos' %}">Lista</a>
                     <a href="{% url 'novo_candidato' %}">Novo</a>
                   </div>
                 </div>
+
               </div>
 {% block content %}{% endblock %}
 
