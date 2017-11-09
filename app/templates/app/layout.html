@@ -729,6 +729,14 @@
                   </div>
                 </div>
 
+                <div class="dropdown">
+                  <button class="dropbtn">Curso</button>
+                  <div class="dropdown-content">
+                    <a href="{% url 'cadastro_cursos' %}">Lista</a>
+                    <a href="{% url 'novo_curso' %}">Novo</a>
+                  </div>
+                </div>
+
               </div>
 {% block content %}{% endblock %}
 
