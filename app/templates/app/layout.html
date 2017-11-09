@@ -702,23 +702,13 @@
 </head>
 
 <body>
-                <ul class="nav">
-                    <li><a href="{% url 'pagina_inicial' %}">Pagina Inicial</a></li>
-                    <li><a href="{% url 'cadastro_alunos' %}">Aluno</a></li>
-                    <li><a href="{% url 'cadastro_candidatos' %}">Candidatos</a></li>
-                    <li><a href="{% url 'cadastro_colaborador' %}">Colaborador</a></li>
-                    <li><a href="{% url 'cadastro_cursos' %}">Curso</a></li>
-                    <li><a href="{% url 'contato' %}">Contato</a></li>
-                    <li><a href="{% url 'desenvolvido' %}">Desenvolvido</a></li>
-                    <li><a href="{% url 'cadastro' %}">Cadastro</a></li>
-                </ul>
-              <div>
+
+              <div class="nav">
                 <div class="dropdown">
-                  <button class="dropbtn">Dropdown</button>
+                  <button class="dropbtn">Aluno</button>
                   <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a href="{% url 'cadastro_alunos' %}">Lista</a>
+                    <a href="{% url 'novo_alunos' %}">Novo</a>
                   </div>
                 </div>
               </div>
