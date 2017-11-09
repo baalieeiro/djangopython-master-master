@@ -704,6 +704,7 @@
 <body>
 
               <div class="nav">
+
                 <div class="dropdown">
                   <button class="dropbtn">Aluno</button>
                   <div class="dropdown-content">
@@ -711,11 +712,20 @@
                     <a href="{% url 'novo_aluno' %}">Novo</a>
                   </div>
                 </div>
+
                 <div class="dropdown">
                   <button class="dropbtn">Candidato</button>
                   <div class="dropdown-content">
                     <a href="{% url 'cadastro_candidatos' %}">Lista</a>
                     <a href="{% url 'novo_candidato' %}">Novo</a>
+                  </div>
+                </div>
+
+                <div class="dropdown">
+                  <button class="dropbtn">Colaborador</button>
+                  <div class="dropdown-content">
+                    <a href="{% url 'cadastro_colaborador' %}">Lista</a>
+                    <a href="{% url 'novo_colaborador' %}">Novo</a>
                   </div>
                 </div>
 
