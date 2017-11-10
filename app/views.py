@@ -239,4 +239,4 @@ def apagar_colaborador(request, pk, template_name='app/confirmacao_apagar_colabo
     if request.method=='POST':
         colaborador.delete()
         return redirect('cadastro_colaborador')
-    return render(request, template_name, {'object':colaborador})
+    return render(request, template_name, {'object':colaborador.nome})
