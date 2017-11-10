@@ -6,7 +6,7 @@ from app.models import Aluno
 from app.models import Candidato
 from app.models import Colaborador
 from datetime import datetime
-#from app.forms import UserModelForm
+from app.forms import UserModelForm
 from app.forms import CursoForm
 from app.forms import AlunoForm
 from app.forms import CandidatoForm
