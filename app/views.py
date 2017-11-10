@@ -14,6 +14,7 @@ from app.forms import ColaboradorForm
 from django.views.generic import TemplateView,ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
+from django.forms import ModelForm
 
 
 def pagina_inicial(request):
@@ -232,9 +233,13 @@ def apagar_curso(request, pk, template_name='app/confirmacao_apagar_curso.html')
         return redirect('cadastro_cursos')
     return render(request, template_name, {'object':curso.nome})
 
+
 def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
-    aluno = get_object_or_404(Aluno, pk = pk)
-    form = AlunoForm(request.POST, instance = aluno)
+    if request.user.is_superuser:
+        aluno= get_object_or_404(Aluno, pk=pk)
+    else:
+        aluno= get_object_or_404(Aluno, pk=pk, user=request.user)
+    form = AlunoForm(request.POST or None, instance = aluno)
     if form.is_valid():
         form.save()
         return redirect('cadastro_alunos')
