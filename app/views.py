@@ -183,7 +183,6 @@ def novo_curso(request, template_name='app/novo_curso.html'):
 def novo_aluno(request, template_name='app/novo_aluno.html'):
     form = AlunoForm(request.POST or None)
     if form.is_valid():
-        aluno = form.save(commit=False)
         aluno.save()
         return redirect('cadastro_alunos')
     return render(request, template_name, {'form':form})
@@ -235,10 +234,7 @@ def apagar_curso(request, pk, template_name='app/confirmacao_apagar_curso.html')
 
 
 def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
-    if request.user.is_superuser:
-        aluno= get_object_or_404(Aluno, pk=pk)
-    else:
-        aluno= get_object_or_404(Aluno, pk=pk)
+    aluno= get_object_or_404(Aluno, pk=pk)
     form = AlunoForm(request.POST or None, instance = aluno)
     if form.is_valid():
         form.save()
