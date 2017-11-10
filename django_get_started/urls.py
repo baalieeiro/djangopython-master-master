@@ -4,7 +4,7 @@ Definition of urls for django_get_started.
 
 from datetime import datetime
 from django.conf.urls import patterns, url
-#from app.forms import BootstrapAuthenticationForm
+from app.forms import BootstrapAuthenticationForm
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -29,7 +29,6 @@ urlpatterns = patterns('',
 
     url(r'^cadastro$', 'app.views.cadastro', name='cadastro'),
 
-'''
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {
@@ -48,5 +47,5 @@ urlpatterns = patterns('',
             'next_page': '/',
         },
         name='logout'),
-'''
+
 )
