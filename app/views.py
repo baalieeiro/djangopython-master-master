@@ -11,6 +11,10 @@ from app.forms import CursoForm
 from app.forms import AlunoForm
 from app.forms import CandidatoForm
 from app.forms import ColaboradorForm
+from django.views.generic import TemplateView,ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
+
 
 def pagina_inicial(request):
     assert isinstance(request, HttpRequest)
@@ -199,12 +203,32 @@ def novo_colaborador(request):
             form.save()
     return render(request, 'app/novo_colaborador.html', context)
 
+class apagar_aluno(DeleteView):
+    model = Aluno
+    success_url = reverse_lazy('cadastro_alunos')
+
 def apagar_aluno(request, pk, template_name='confirmacao_apagar_aluno.html'):
     aluno = get_object_or_404(Aluno, pk=pk)
     if request.method=='POST':
         aluno.delete()
         return redirect('cadastro_alunos')
     return render(request, template_name, {'object':aluno})
+
+class editar_aluno(UpdateView):
+    model = Aluno
+    fields = ['ra', 'nome', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
+    success_url = reverse_lazy('cadastro_alunos')
+
+def editar_aluno(request, pk, template_name='novo_aluno'):
+    if request.user.is_superuser:
+        aluno = get_object_or_404(Aluno, pk=pk)
+    else:
+        aluno = get_object_or_404(Aluno, pk=pk, user=request.user)
+    form = AlunoForm(request.POST or None, instance=aluno)
+    if form.is_valid():
+        form.save()
+        return redirect('cadastro_alunos')
+    return render(request, template_name, {'form':form})
 
 def apagar_candidato(request, pk, template_name='confirmacao_apagar_candidato.html'):
     candidato = get_object_or_404(Candidato, pk=pk)
