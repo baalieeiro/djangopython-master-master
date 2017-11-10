@@ -21,6 +21,7 @@ urlpatterns = patterns('',
 
     url(r'^cadastro_candidatos', 'app.views.cadastro_candidatos', name='cadastro_candidatos'),
     url(r'^novo_candidato', 'app.views.novo_candidato', name='novo_candidato'),
+    url(r'^apagar_candidato/(?P<pk>\d+)$', 'app.views.apagar_candidato', name='apagar_candidato'),
 
     url(r'^cadastro_colaborador', 'app.views.cadastro_colaborador', name='cadastro_colaborador'),
     url(r'^novo_colaborador', 'app.views.novo_colaborador', name='novo_colaborador'),

@@ -205,3 +205,10 @@ def apagar_aluno(request, pk, template_name='confirmacao_apagar_aluno.html'):
         aluno.delete()
         return redirect('cadastro_alunos')
     return render(request, template_name, {'object':aluno})
+
+def apagar_candidato(request, pk, template_name='confirmacao_apagar_candidato.html'):
+    candidato = get_object_or_404(Candidato, pk=pk)
+    if request.method=='POST':
+        candidato.delete()
+        return redirect('cadastro_candidatos')
+    return render(request, template_name, {'object':candidato})

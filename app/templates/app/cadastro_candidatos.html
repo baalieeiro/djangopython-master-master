@@ -9,7 +9,11 @@
 <table class="table">
     <tr><th>Nome</th><th>Curso</th></tr>
         {% for candidato in candidatos %}
-          <tr><td>{{ candidato.nome }}</td><td>{{ candidato.curso }}</td></tr>
+          <tr>
+            <td>{{ candidato.nome }}</td>
+            <td>{{ candidato.curso }}</td>
+            <td><a href="{% url 'apagar_candidato' candidato.id %}">Apagar</a></td>
+          </tr>
         {% endfor %}
 </table>
 
