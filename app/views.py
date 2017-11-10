@@ -207,7 +207,7 @@ class apagar_aluno(DeleteView):
     model = Aluno
     success_url = reverse_lazy('cadastro_alunos')
 
-def apagar_aluno(request, pk, template_name='confirmacao_apagar_aluno.html'):
+def apagar_aluno(request, pk, template_name='app/confirmacao_apagar_aluno.html'):
     aluno = get_object_or_404(Aluno, pk=pk)
     if request.method=='POST':
         aluno.delete()
@@ -224,10 +224,10 @@ def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
     form = AlunoForm(request.POST, instance = aluno)
     if form.is_valid():
         form.save()
-        return redirect('cadastro_alunos')
+        return redirect('app/cadastro_alunos')
     return render(request, template_name, {'form':form})
 
-def apagar_candidato(request, pk, template_name='confirmacao_apagar_candidato.html'):
+def apagar_candidato(request, pk, template_name='app/confirmacao_apagar_candidato.html'):
     candidato = get_object_or_404(Candidato, pk=pk)
     if request.method=='POST':
         candidato.delete()
