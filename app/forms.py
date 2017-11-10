@@ -146,7 +146,7 @@ class CandidatoForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 25,
+            'size': 35,
             'placeholder': 'Nome'
         }
     )
@@ -166,7 +166,7 @@ class CandidatoForm(forms.ModelForm):
     max_length=15,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 35,
             'placeholder': 'Email'
         }
     )
@@ -186,7 +186,7 @@ class CandidatoForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 10,
             'placeholder': 'Cidade'
         }
     )
@@ -232,7 +232,7 @@ class ColaboradorForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 25,
+            'size': 35,
             'placeholder': 'Nome'
         }
     )
@@ -252,7 +252,7 @@ class ColaboradorForm(forms.ModelForm):
     max_length=15,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 35,
             'placeholder': 'Email'
         }
     )
@@ -272,7 +272,7 @@ class ColaboradorForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 10,
             'placeholder': 'Cidade'
         }
     )
