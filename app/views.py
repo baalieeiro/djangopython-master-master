@@ -203,6 +203,7 @@ def novo_colaborador(request):
             form.save()
     return render(request, 'app/novo_colaborador.html', context)
 
+
 def apagar_aluno(request, pk, template_name='app/confirmacao_apagar_aluno.html'):
     aluno = get_object_or_404(Aluno, pk=pk)
     if request.method=='POST':
@@ -223,3 +224,11 @@ def apagar_colaborador(request, pk, template_name='app/confirmacao_apagar_colabo
         colaborador.delete()
         return redirect('cadastro_colaborador')
     return render(request, template_name, {'object':colaborador.nome})
+
+def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
+    aluno = get_object_or_404(Aluno, pk = pk)
+    form = AlunoForm(request.POST, instance = aluno)
+    if form.is_valid():
+        form.save()
+        return redirect('cadastro_alunos')
+    return render(request, template_name, {'form':form})
