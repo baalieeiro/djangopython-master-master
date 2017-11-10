@@ -6,7 +6,7 @@ from app.models import Aluno
 from app.models import Candidato
 from app.models import Colaborador
 from datetime import datetime
-from app.forms import UserModelForm
+#from app.forms import UserModelForm
 from app.forms import CursoForm
 from app.forms import AlunoForm
 from app.forms import CandidatoForm
@@ -158,7 +158,7 @@ def novo_usuario(request):
             'year':datetime.now().year,
         })
     )
-
+'''
 def cadastro(request):
     form = UserModelForm(request.POST)
     context = {'form':form}
@@ -174,7 +174,7 @@ def novo_curso(request):
         if form.is_valid():
             form.save()
     return render(request, 'app/novo_curso.html', context)
-
+'''
 def novo_aluno(request):
     form = AlunoForm(request.POST)
     context = {'form':form}
