@@ -9,7 +9,12 @@
 <table class="table">
     <tr><th>Nome do curso</th><th>Período</th><th>Faculdade</th></tr>
         {% for curso in cursos %}
-          <tr><td>{{ curso.nome }}</td><td>{{ curso.periodo }}</td><td>{{ curso.instituicao }}</td></tr>
+          <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.periodo }}</td>
+            <td>{{ curso.instituicao }}</td>
+            <td><a href="{% url 'apagar_curso' curso.id %}">Apagar</a></td>
+          </tr>
         {% endfor %}
 </table>
 

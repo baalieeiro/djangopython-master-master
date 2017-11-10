@@ -1,0 +1,12 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div>
+  <form method="post">{% csrf_token %}
+    Tem certeza de que deseja excluir {{ object }}?
+    </br>
+      <input type="submit" value="Apagar" />
+  </form>
+<div>
+{% endblock %}
