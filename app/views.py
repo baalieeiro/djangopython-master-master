@@ -175,8 +175,7 @@ def cadastro(request):
 def novo_curso(request, template_name='app/novo_curso.html'):
     form = CursoForm(request.POST or None)
     if form.is_valid():
-        curso = form.save(commit=False)
-        curso.save()
+        form.save()
         return redirect('cadastro_cursos')
     return render(request, template_name, {'form':form})
 
@@ -190,16 +189,14 @@ def novo_aluno(request, template_name='app/novo_aluno.html'):
 def novo_candidato(request, template_name='app/novo_candidato.html'):
     form = CandidatoForm(request.POST or None)
     if form.is_valid():
-        candidato = form.save(commit=False)
-        candidato.save()
+        form.save()
         return redirect('cadastro_candidatos')
     return render(request, template_name, {'form':form})
 
 def novo_colaborador(request, template_name='app/novo_colaborador.html'):
     form = ColaboradorForm(request.POST or None)
     if form.is_valid():
-        colaborador = form.save(commit=False)
-        colaborador.save()
+        form.save()
         return redirect('cadastro_colaborador')
     return render(request, template_name, {'form':form})
 
