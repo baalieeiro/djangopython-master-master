@@ -233,3 +233,10 @@ def apagar_candidato(request, pk, template_name='app/confirmacao_apagar_candidat
         candidato.delete()
         return redirect('cadastro_candidatos')
     return render(request, template_name, {'object':candidato})
+
+def apagar_colaborador(request, pk, template_name='app/confirmacao_apagar_colaborador.html'):
+    colaborador = get_object_or_404(Colaborador, pk=pk)
+    if request.method=='POST':
+        colaborador.delete()
+        return redirect('cadastro_colaborador')
+    return render(request, template_name, {'object':colaborador})
