@@ -5,7 +5,7 @@ from models import Curso
 from models import Aluno
 from models import Candidato
 from models import Colaborador
-
+from models import Usuario
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 

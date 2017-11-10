@@ -1,0 +1,55 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de usuario</h1>
+</div>
+
+<form method="post" action="{% url 'novo_usuario' %}">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do usuario</legend>
+      <table cellspacing="2">
+
+        <tr>
+          <td>
+
+            <label for="ra">Nome: </label>
+          </td>
+          <td align="left">
+            {{ form.nome }}</br>
+          </td>
+        </tr>
+
+                <tr>
+                  <td>
+
+                    <label for="email">Email: </label>
+                  </td>
+                  <td align="left">
+                    {{ form.email }}</br>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label for="senha">Senha: </label>
+                  </td>
+                  <td align="left">
+                    {{ form.senha }}</br>
+                  </td>
+                </tr>
+
+
+    </table>
+  </fieldset>
+<table>
+  <tr>
+    <td>
+        <input type="submit" value="Salvar" />
+    </td>
+  </tr>
+</table>
+
+</form>
+{% endblock %}
