@@ -58,11 +58,11 @@ def desenvolvido(request):
         })
     )
 
-def cadastro_alunos(request):
+def listar_alunos(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/cadastro_alunos.html',
+        'app/listar_alunos.html',
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de alunos',
@@ -72,11 +72,11 @@ def cadastro_alunos(request):
     )
 
 
-def cadastro_candidatos(request):
+def listar_candidatos(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/cadastro_candidatos.html',
+        'app/listar_candidatos.html',
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de candidatos',
@@ -99,11 +99,11 @@ def novo_candidato(request):
     )
 
 
-def cadastro_colaborador(request):
+def listar_colaborador(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/cadastro_colaborador.html',
+        'app/listar_colaborador.html',
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de colaborador',
@@ -126,11 +126,11 @@ def novo_colaborador(request):
     )
 
 
-def cadastro_cursos(request):
+def listar_cursos(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/cadastro_cursos.html',
+        'app/listar_cursos.html',
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de cursos',
@@ -140,11 +140,11 @@ def cadastro_cursos(request):
     )
 
 
-def cadastro_usuarios(request):
+def listar_usuarios(request):
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/cadastro_usuarios.html',
+        'app/listar_usuarios.html',
         context_instance = RequestContext(request,
         {
             'title':'Cadastro de usuarios',
