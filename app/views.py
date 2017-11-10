@@ -158,7 +158,7 @@ def novo_usuario(request):
             'year':datetime.now().year,
         })
     )
-'''
+
 def cadastro(request):
     form = UserModelForm(request.POST)
     context = {'form':form}
@@ -174,7 +174,7 @@ def novo_curso(request):
         if form.is_valid():
             form.save()
     return render(request, 'app/novo_curso.html', context)
-'''
+
 def novo_aluno(request):
     form = AlunoForm(request.POST)
     context = {'form':form}
