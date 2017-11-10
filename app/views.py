@@ -172,13 +172,13 @@ def cadastro(request):
             form.save()
     return render(request, 'app/cadastro.html', context)
 
-def novo_curso(request):
-    form = CursoForm(request.POST)
-    context = {'form':form}
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-    return render(request, 'app/novo_curso.html', context)
+def novo_curso(request, template_name='app/novo_curso.html'):
+    form = CursoForm(request.POST or None)
+    if form.is_valid():
+        curso = form.save(commit=False)
+        curso.save()
+        return redirect('cadastro_cursos')
+    return render(request, template_name, {'form':form})
 
 def novo_aluno(request, template_name='app/novo_aluno.html'):
     form = AlunoForm(request.POST or None)
@@ -188,21 +188,21 @@ def novo_aluno(request, template_name='app/novo_aluno.html'):
         return redirect('cadastro_alunos')
     return render(request, template_name, {'form':form})
 
-def novo_candidato(request):
-    form = CandidatoForm(request.POST)
-    context = {'form':form}
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-    return render(request, 'app/novo_candidato.html', context)
+def novo_candidato(request, template_name='app/novo_candidato.html'):
+    form = CandidatoForm(request.POST or None)
+    if form.is_valid():
+        candidato = form.save(commit=False)
+        candidato.save()
+        return redirect('cadastro_candidatos')
+    return render(request, template_name, {'form':form})
 
-def novo_colaborador(request):
-    form = ColaboradorForm(request.POST)
-    context = {'form':form}
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-    return render(request, 'app/novo_colaborador.html', context)
+def novo_colaborador(request, template_name='app/novo_candidato.html'):
+    form = ColaboradorForm(request.POST or None)
+    if form.is_valid():
+        colaborador = form.save(commit=False)
+        colaborador.save()
+        return redirect('cadastro_colaborador')
+    return render(request, template_name, {'form':form})
 
 
 def apagar_aluno(request, pk, template_name='app/confirmacao_apagar_aluno.html'):
