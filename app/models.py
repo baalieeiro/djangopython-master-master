@@ -45,3 +45,8 @@ class Colaborador(models.Model):
     estado = models.CharField(max_length=10)
     telefone = models.CharField(max_length=15)
     celular = models.CharField(max_length=15)
+
+class Usuario(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    senha = models.CharField(max_length=15)

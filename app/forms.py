@@ -311,3 +311,39 @@ class ColaboradorForm(forms.ModelForm):
     class Meta:
         model = Colaborador
         fields = ['nome', 'cargo', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
+
+class UsuarioForm(forms.ModelForm):
+
+    nome = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
+            'placeholder': 'Nome'
+        }
+    )
+)
+
+    email = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
+            'placeholder': 'Email'
+        }
+    )
+)
+
+    senha = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
+            'placeholder': 'Senha'
+        }
+    )
+)
+
+    class Meta:
+        model = Usuario
+        fields = ['nome', 'email', 'senha']

@@ -718,29 +718,36 @@
       <li class="dropdown">
         <a href="" class="dropbtn">Aluno</a>
         <div class="dropdown-content">
-          <a href="{% url 'cadastro_alunos' %}">Lista</a>
+          <a href="{% url 'listar_alunos' %}">Lista</a>
           <a href="{% url 'novo_aluno' %}">Novo</a>
         </div>
       </li>
       <li class="dropdown">
         <a href="" class="dropbtn">Candidato</a>
         <div class="dropdown-content">
-          <a href="{% url 'cadastro_candidatos' %}">Lista</a>
+          <a href="{% url 'listar_candidatos' %}">Lista</a>
           <a href="{% url 'novo_candidato' %}">Novo</a>
         </div>
       </li>
       <li class="dropdown">
         <a href="" class="dropbtn">Colaborador</a>
         <div class="dropdown-content">
-          <a href="{% url 'cadastro_colaborador' %}">Lista</a>
+          <a href="{% url 'listar_colaborador' %}">Lista</a>
           <a href="{% url 'novo_colaborador' %}">Novo</a>
         </div>
       </li>
       <li class="dropdown">
         <a href="" class="dropbtn">Cursos</a>
         <div class="dropdown-content">
-          <a href="{% url 'cadastro_cursos' %}">Lista</a>
+          <a href="{% url 'listar_cursos' %}">Lista</a>
           <a href="{% url 'novo_curso' %}">Novo</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="" class="dropbtn">Usuario</a>
+        <div class="dropdown-content">
+          <a href="{% url 'listar_usuarios' %}">Lista</a>
+          <a href="{% url 'novo_usuario' %}">Novo</a>
         </div>
       </li>
     </ul>
