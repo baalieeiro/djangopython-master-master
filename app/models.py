@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 class Curso(models.Model):
     nome = models.CharField(max_length=200)
