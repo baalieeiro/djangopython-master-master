@@ -219,7 +219,7 @@ class editar_aluno(UpdateView):
     fields = ['ra', 'nome', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
     success_url = reverse_lazy('cadastro_alunos')
 
-def editar_aluno(request, pk, template_name='novo_aluno'):
+def editar_aluno(request, pk, template_name='novo_aluno.html'):
     aluno = get_object_or_404(Aluno, pk = pk)
     form = AlunoForm(request.POST, instance = aluno)
     if form.is_valid():
