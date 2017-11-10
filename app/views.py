@@ -180,13 +180,13 @@ def novo_curso(request):
             form.save()
     return render(request, 'app/novo_curso.html', context)
 
-def novo_aluno(request):
-    form = AlunoForm(request.POST)
-    context = {'form':form}
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-    return render(request, 'app/novo_aluno.html', context)
+def novo_aluno(request, template_name='app/novo_aluno.html'):
+    form = AlunoForm(request.POST or None)
+    if form.is_valid():
+        aluno = form.save(commit=False)
+        aluno.save()
+        return redirect('cadastro_alunos')
+    return render(request, template_name, {'form':form})
 
 def novo_candidato(request):
     form = CandidatoForm(request.POST)
