@@ -59,7 +59,7 @@ def cadastro_alunos(request, template_name='app/cadastro_alunos.html'):
     if request.user.is_superuser:
         aluno = Book.objects.all()
     else:
-        aluno = Book.objects.filter(user=request.user)
+        aluno = Book.objects.filter()
     data = {}
     data['object_list'] = aluno
     return render(request, template_name, data)
@@ -247,7 +247,7 @@ def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
     if request.user.is_superuser:
         aluno= get_object_or_404(Aluno, pk=pk)
     else:
-        aluno= get_object_or_404(Aluno, pk=pk, user=request.user)
+        aluno= get_object_or_404(Aluno, pk=pk)
     form = AlunoForm(request.POST or None, instance = aluno)
     if form.is_valid():
         form.save()
