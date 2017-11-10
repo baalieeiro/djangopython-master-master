@@ -59,7 +59,7 @@ def cadastro_alunos(request, template_name='app/cadastro_alunos.html'):
     if request.user.is_superuser:
         aluno = Aluno.objects.all()
     else:
-        aluno = Aluno.objects.filter()
+        aluno = Aluno.objects.all()
     data = {}
     data['object_list'] = aluno
     return render(request, template_name, data)
