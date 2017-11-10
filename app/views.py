@@ -183,7 +183,7 @@ def novo_curso(request, template_name='app/novo_curso.html'):
 def novo_aluno(request, template_name='app/novo_aluno.html'):
     form = AlunoForm(request.POST or None)
     if form.is_valid():
-        aluno.save()
+        form.save()
         return redirect('cadastro_alunos')
     return render(request, template_name, {'form':form})
 
