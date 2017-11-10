@@ -55,15 +55,19 @@ def desenvolvido(request):
             'year':datetime.now().year,
         })
     )
-def cadastro_alunos(request, template_name='app/cadastro_alunos.html'):
-    if request.user.is_superuser:
-        aluno = Aluno.objects.all()
-    else:
-        aluno = Aluno.objects.all()
-    data = {}
-    data['object_list'] = aluno
-    return render(request, template_name, data)
 
+def cadastro_alunos(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/cadastro_alunos.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Cadastro de alunos',
+            'alunos': Aluno.objects.all(),
+            'year':datetime.now().year,
+        })
+    )
 
 
 def cadastro_candidatos(request):
