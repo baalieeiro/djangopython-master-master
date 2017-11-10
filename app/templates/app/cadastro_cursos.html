@@ -13,6 +13,7 @@
             <td>{{ curso.nome }}</td>
             <td>{{ curso.periodo }}</td>
             <td>{{ curso.instituicao }}</td>
+            <td><a href="{% url 'editar_curso' curso.id %}">Editar</a></td>
             <td><a href="{% url 'apagar_curso' curso.id %}">Apagar</a></td>
           </tr>
         {% endfor %}

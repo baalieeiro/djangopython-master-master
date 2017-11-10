@@ -244,3 +244,36 @@ def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
         form.save()
         return redirect('cadastro_alunos')
     return render(request, template_name, {'form':form})
+
+def editar_candidato(request, pk, template_name='app/novo_candidato.html'):
+    if request.user.is_superuser:
+        candidato= get_object_or_404(Candidato, pk=pk)
+    else:
+        candidato= get_object_or_404(Candidato, pk=pk)
+    form = CandidatoForm(request.POST or None, instance = candidato)
+    if form.is_valid():
+        form.save()
+        return redirect('cadastro_candidatos')
+    return render(request, template_name, {'form':form})
+
+def editar_colaborador(request, pk, template_name='app/novo_colaborador.html'):
+    if request.user.is_superuser:
+        colaborador= get_object_or_404(Colaborador, pk=pk)
+    else:
+        colaborador= get_object_or_404(Colaborador, pk=pk)
+    form = ColaboradorForm(request.POST or None, instance = colaborador)
+    if form.is_valid():
+        form.save()
+        return redirect('cadastro_colaborador')
+    return render(request, template_name, {'form':form})
+
+def editar_curso(request, pk, template_name='app/novo_curso.html'):
+    if request.user.is_superuser:
+        curso = get_object_or_404(Curso, pk=pk)
+    else:
+        curso = get_object_or_404(Curso, pk=pk)
+    form = CursoForm(request.POST or None, instance = curso)
+    if form.is_valid():
+        form.save()
+        return redirect('cadastro_cursos')
+    return render(request, template_name, {'form':form})

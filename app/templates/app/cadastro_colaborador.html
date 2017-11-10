@@ -15,6 +15,7 @@
           <tr>
             <td>{{ colaborador.nome }}</td>
             <td>{{ colaborador.cargo }}</td>
+            <td><a href="{% url 'editar_colaborador' colaborador.id %}">Editar</a></td>
             <td><a href="{% url 'apagar_colaborador' colaborador.id %}">Apagar</a></td>
           </tr>
         {% endfor %}
