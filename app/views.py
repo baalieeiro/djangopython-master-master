@@ -211,11 +211,6 @@ def apagar_aluno(request, pk, template_name='app/confirmacao_apagar_aluno.html')
         return redirect('cadastro_alunos')
     return render(request, template_name, {'object':aluno.nome})
 
-class editar_aluno(UpdateView):
-    model = Aluno
-    fields = ['ra', 'nome', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
-    success_url = reverse_lazy('cadastro_alunos')
-
 def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
     aluno = get_object_or_404(Aluno, pk = pk)
     form = AlunoForm(request.POST, instance = aluno)
