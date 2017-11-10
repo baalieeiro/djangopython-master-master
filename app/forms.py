@@ -69,7 +69,7 @@ class AlunoForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 25,
+            'size': 35,
             'placeholder': 'Nome'
         }
     )
@@ -87,7 +87,7 @@ class AlunoForm(forms.ModelForm):
     max_length=15,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 35,
             'placeholder': 'Email'
         }
     )
@@ -105,7 +105,7 @@ class AlunoForm(forms.ModelForm):
     max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 15,
+            'size': 10,
             'placeholder': 'Cidade'
         }
     )
