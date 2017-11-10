@@ -29,7 +29,7 @@ urlpatterns = patterns('',
 
     url(r'^cadastro$', 'app.views.cadastro', name='cadastro'),
 
-
+'''
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {
@@ -48,5 +48,5 @@ urlpatterns = patterns('',
             'next_page': '/',
         },
         name='logout'),
-
+'''
 )
