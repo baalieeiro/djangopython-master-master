@@ -177,7 +177,7 @@ class CandidatoForm(forms.ModelForm):
     widget=forms.TextInput(
         attrs={
             'size': 35,
-            'placeholder': 'Endereço'
+            'placeholder': 'Endereco'
         }
     )
 )
