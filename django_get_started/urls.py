@@ -26,6 +26,7 @@ urlpatterns = patterns('',
 
     url(r'^cadastro_colaborador', 'app.views.cadastro_colaborador', name='cadastro_colaborador'),
     url(r'^novo_colaborador', 'app.views.novo_colaborador', name='novo_colaborador'),
+    url(r'^apagar_colaborador/(?P<pk>\d+)$', 'app.views.apagar_colaborador', name='apagar_colaborador'),
 
     url(r'^cadastro_cursos', 'app.views.cadastro_cursos', name='cadastro_cursos'),
     url(r'^novo_curso', 'app.views.novo_curso', name='novo_curso'),
