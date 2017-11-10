@@ -224,7 +224,7 @@ def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
     form = AlunoForm(request.POST, instance = aluno)
     if form.is_valid():
         form.save()
-        return redirect('app/cadastro_alunos')
+        return redirect('cadastro_alunos')
     return render(request, template_name, {'form':form})
 
 def apagar_candidato(request, pk, template_name='app/confirmacao_apagar_candidato.html'):
