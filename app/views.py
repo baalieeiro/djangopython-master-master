@@ -238,7 +238,7 @@ def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
     if request.user.is_superuser:
         aluno= get_object_or_404(Aluno, pk=pk)
     else:
-        aluno= get_object_or_404(Aluno, pk=pk, user=request.user)
+        aluno= get_object_or_404(Aluno, pk=pk)
     form = AlunoForm(request.POST or None, instance = aluno)
     if form.is_valid():
         form.save()
