@@ -206,7 +206,7 @@ def novo_usuario(request, template_name='app/novo_usuario.html'):
     form = UsuarioForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('lista_usuarios')
+        return redirect('listar_usuarios')
     return render(request, template_name, {'form':form})
 
 def apagar_usuario(request, pk, template_name='app/confirmacao_apagar_usuario.html'):
