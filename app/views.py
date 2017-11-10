@@ -196,7 +196,7 @@ def novo_candidato(request, template_name='app/novo_candidato.html'):
         return redirect('cadastro_candidatos')
     return render(request, template_name, {'form':form})
 
-def novo_colaborador(request, template_name='app/novo_candidato.html'):
+def novo_colaborador(request, template_name='app/novo_colaborador.html'):
     form = ColaboradorForm(request.POST or None)
     if form.is_valid():
         colaborador = form.save(commit=False)
