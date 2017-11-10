@@ -14,7 +14,7 @@ class Aluno(models.Model):
     endereco = models.CharField(max_length=200)
     cidade = models.CharField(max_length=100)
     estado = models.CharField(max_length=10)
-    telefone = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=15)
     celular = models.CharField(max_length=15)
 
 class Candidato(models.Model):
@@ -25,7 +25,7 @@ class Candidato(models.Model):
     endereco = models.CharField(max_length=200)
     cidade = models.CharField(max_length=100)
     estado = models.CharField(max_length=10)
-    telefone = models.CharField(max_length=100)
+    telefone = models.CharField(max_length=15)
     celular = models.CharField(max_length=15)
 
 class Colaborador(models.Model):
