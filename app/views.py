@@ -229,7 +229,7 @@ def apagar_curso(request, pk, template_name='app/confirmacao_apagar_curso.html')
     curso = get_object_or_404(Curso, pk=pk)
     if request.method=='POST':
         curso.delete()
-        return redirect('cadastro_curso')
+        return redirect('cadastro_cursos')
     return render(request, template_name, {'object':curso.nome})
 
 def editar_aluno(request, pk, template_name='app/novo_aluno.html'):
