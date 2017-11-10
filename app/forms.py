@@ -41,8 +41,6 @@ class CursoForm(forms.ModelForm):
         }
     )
 )
-
-
     instituicao = forms.CharField(
     max_length=15,
     widget=forms.TextInput(
@@ -58,7 +56,6 @@ class CursoForm(forms.ModelForm):
         fields = ['nome', 'periodo', 'instituicao']
 
 class AlunoForm(forms.ModelForm):
-
     ra = forms.CharField(
     max_length=100,
     widget=forms.TextInput(
@@ -68,7 +65,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     nome = forms.CharField(
     max_length=100,
     widget=forms.TextInput(
@@ -78,7 +74,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     data_nascimento = forms.CharField(
     max_length=15,
     widget=forms.TextInput(
@@ -88,7 +83,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     email = forms.CharField(
     max_length=15,
     widget=forms.TextInput(
@@ -98,7 +92,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     endereco = forms.CharField(
     max_length=200,
     widget=forms.TextInput(
@@ -108,7 +101,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     cidade = forms.CharField(
     max_length=100,
     widget=forms.TextInput(
@@ -118,7 +110,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     estado = forms.CharField(
     max_length=10,
     widget=forms.TextInput(
@@ -128,7 +119,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     telefone = forms.CharField(
     max_length=15,
     widget=forms.TextInput(
@@ -138,7 +128,6 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     celular = forms.CharField(
     max_length=15,
     widget=forms.TextInput(
@@ -148,10 +137,9 @@ class AlunoForm(forms.ModelForm):
         }
     )
 )
-
     class Meta:
         model = Aluno
-        fields = ['nome', 'ra', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
+        fields = ['ra', 'nome', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
 
 class CandidatoForm(forms.ModelForm):
     nome = forms.CharField(

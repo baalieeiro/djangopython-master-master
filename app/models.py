@@ -6,8 +6,8 @@ class Curso(models.Model):
     instituicao = models.CharField(max_length=200)
 
 class Aluno(models.Model):
-    nome = models.CharField(max_length=100)
     ra = models.CharField(max_length=10)
+    nome = models.CharField(max_length=100)
     curso = models.CharField(max_length=100)
     data_nascimento = models.CharField(max_length=15)
     email = models.CharField(max_length=100)
