@@ -37,15 +37,95 @@ class CursoForm(forms.ModelForm):
         fields = ['nome', 'periodo', 'instituicao']
 
 class AlunoForm(forms.ModelForm):
-    nome = forms.CharField(
-    max_length=30,
+    ra = forms.CharField(
+    max_length=100,
     widget=forms.TextInput(
         attrs={
-            'size': 4,
+            'size': 10,
+            'placeholder': 'Ra'
+        }
+    )
+)
+    nome = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
             'placeholder': 'Nome'
         }
     )
 )
+
+    data_nascimento = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Data de nascimento'
+        }
+    )
+)
+
+    email = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Email'
+        }
+    )
+)
+
+    endereco = forms.CharField(
+    max_length=200,
+    widget=forms.TextInput(
+        attrs={
+            'size': 35,
+            'placeholder': 'Email'
+        }
+    )
+)
+
+    cidade = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Cidade'
+        }
+    )
+)
+
+    estado = forms.CharField(
+    max_length=10,
+    widget=forms.TextInput(
+        attrs={
+            'size': 5,
+            'placeholder': 'Estado'
+        }
+    )
+)
+
+    telefone = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Telefone'
+        }
+    )
+)
+
+    celular = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Celular'
+        }
+    )
+)
+
     class Meta:
         model = Aluno
         fields = ['nome', 'ra', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
