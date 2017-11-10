@@ -22,9 +22,6 @@ class BootstrapAuthenticationForm(AuthenticationForm):
 
 
 class UserModelForm(forms.ModelForm):
-
-
-
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'password']
@@ -62,15 +59,15 @@ class CursoForm(forms.ModelForm):
 
 class AlunoForm(forms.ModelForm):
 
-        ra = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'size': 10,
-                'placeholder': 'Ra'
-            }
-        )
+    ra = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Ra'
+        }
     )
+)
 
     nome = forms.CharField(
     max_length=100,
@@ -157,85 +154,85 @@ class AlunoForm(forms.ModelForm):
         fields = ['nome', 'ra', 'curso', 'data_nascimento', 'email', 'endereco', 'cidade', 'estado', 'telefone', 'celular']
 
 class CandidatoForm(forms.ModelForm):
-        nome = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'size': 25,
-                'placeholder': 'Nome'
-            }
-        )
+    nome = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
+            'placeholder': 'Nome'
+        }
     )
+)
 
-        data_nascimento = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Data de nascimento'
-            }
-        )
+    data_nascimento = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Data de nascimento'
+        }
     )
+)
 
-        email = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Email'
-            }
-        )
+    email = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Email'
+        }
     )
+)
 
-        endereco = forms.CharField(
-        max_length=200,
-        widget=forms.TextInput(
-            attrs={
-                'size': 35,
-                'placeholder': 'Endereço'
-            }
-        )
+    endereco = forms.CharField(
+    max_length=200,
+    widget=forms.TextInput(
+        attrs={
+            'size': 35,
+            'placeholder': 'Endereço'
+        }
     )
+)
 
-        cidade = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Cidade'
-            }
-        )
+    cidade = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Cidade'
+        }
     )
+)
 
-        estado = forms.CharField(
-        max_length=10,
-        widget=forms.TextInput(
-            attrs={
-                'size': 5,
-                'placeholder': 'Estado'
-            }
-        )
+    estado = forms.CharField(
+    max_length=10,
+    widget=forms.TextInput(
+        attrs={
+            'size': 5,
+            'placeholder': 'Estado'
+        }
     )
+)
 
-        telefone = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 10,
-                'placeholder': 'Telefone'
-            }
-        )
+    telefone = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Telefone'
+        }
     )
+)
 
-        celular = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 10,
-                'placeholder': 'Celular'
-            }
-        )
+    celular = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Celular'
+        }
     )
+)
 
     class Meta:
         model = Candidato
@@ -243,85 +240,85 @@ class CandidatoForm(forms.ModelForm):
 
 class ColaboradorForm(forms.ModelForm):
 
-        nome = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'size': 25,
-                'placeholder': 'Nome'
-            }
-        )
+    nome = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 25,
+            'placeholder': 'Nome'
+        }
     )
+)
 
-        data_nascimento = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Data de nascimento'
-            }
-        )
+    data_nascimento = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Data de nascimento'
+        }
     )
+)
 
-        email = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Email'
-            }
-        )
+    email = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Email'
+        }
     )
+)
 
-        endereco = forms.CharField(
-        max_length=200,
-        widget=forms.TextInput(
-            attrs={
-                'size': 35,
-                'placeholder': 'Endereço'
-            }
-        )
+    endereco = forms.CharField(
+    max_length=200,
+    widget=forms.TextInput(
+        attrs={
+            'size': 35,
+            'placeholder': 'Endereço'
+        }
     )
+)
 
-        cidade = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(
-            attrs={
-                'size': 15,
-                'placeholder': 'Cidade'
-            }
-        )
+    cidade = forms.CharField(
+    max_length=100,
+    widget=forms.TextInput(
+        attrs={
+            'size': 15,
+            'placeholder': 'Cidade'
+        }
     )
+)
 
-        estado = forms.CharField(
-        max_length=10,
-        widget=forms.TextInput(
-            attrs={
-                'size': 5,
-                'placeholder': 'Estado'
-            }
-        )
+    estado = forms.CharField(
+    max_length=10,
+    widget=forms.TextInput(
+        attrs={
+            'size': 5,
+            'placeholder': 'Estado'
+        }
     )
+)
 
-        telefone = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 10,
-                'placeholder': 'Telefone'
-            }
-        )
+    telefone = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Telefone'
+        }
     )
+)
 
-        celular = forms.CharField(
-        max_length=15,
-        widget=forms.TextInput(
-            attrs={
-                'size': 10,
-                'placeholder': 'Celular'
-            }
-        )
+    celular = forms.CharField(
+    max_length=15,
+    widget=forms.TextInput(
+        attrs={
+            'size': 10,
+            'placeholder': 'Celular'
+        }
     )
+)
 
     class Meta:
         model = Colaborador
