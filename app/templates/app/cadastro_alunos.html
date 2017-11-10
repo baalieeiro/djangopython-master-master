@@ -12,7 +12,7 @@
           <tr>
             <td>{{ aluno.nome }}</td>
             <td>{{ aluno.curso }}</td>
-            <td><a href="">Apagar</a></td>
+            <td><a href="{% url 'apagar_aluno' %}">Apagar</a></td>
           </tr>
         {% endfor %}
 </table>
