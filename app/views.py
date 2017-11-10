@@ -222,7 +222,7 @@ class editar_aluno(UpdateView):
 def editar_aluno(request, pk, template_name='novo_aluno'):
     if request.user.is_superuser:
         aluno = get_object_or_404(Aluno, pk=pk)
-    form = AlunoForm(request.POST or None, instance=aluno)
+    form = AlunoForm(request.POST, instance=aluno)
     if form.is_valid():
         form.save()
         return redirect('cadastro_alunos')
