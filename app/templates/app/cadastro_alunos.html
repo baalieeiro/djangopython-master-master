@@ -9,7 +9,11 @@
 <table class="table">
     <tr><th>Nome do aluno</th><th>Curso</th></tr>
         {% for aluno in alunos %}
-          <tr><td>{{ aluno.nome }}</td><td>{{ aluno.curso }}</td></tr>
+          <tr>
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.curso }}</td>
+            <td><a href="">Apagar</a></td>
+          </tr>
         {% endfor %}
 </table>
 

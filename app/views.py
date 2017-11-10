@@ -198,3 +198,10 @@ def novo_colaborador(request):
         if form.is_valid():
             form.save()
     return render(request, 'app/novo_colaborador.html', context)
+
+def apagar_aluno(request, pk, template_name='confirmacao_apagar_aluno.html'):
+    aluno= get_object_or_404(Aluno, pk=pk)
+    if request.method=='POST':
+        aluno.delete()
+        return redirect('cadastro_alunos')
+    return render(request, template_name, {'object':aluno})
