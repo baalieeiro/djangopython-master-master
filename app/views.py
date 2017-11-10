@@ -203,16 +203,13 @@ def novo_colaborador(request):
             form.save()
     return render(request, 'app/novo_colaborador.html', context)
 
-class apagar_aluno(DeleteView):
-    model = Aluno
-    success_url = reverse_lazy('cadastro_alunos')
 
 def apagar_aluno(request, pk, template_name='app/confirmacao_apagar_aluno.html'):
     aluno = get_object_or_404(Aluno, pk=pk)
     if request.method=='POST':
         aluno.delete()
         return redirect('cadastro_alunos')
-    return render(request, template_name, {'object':aluno})
+    return render(request, template_name, {'object':aluno.nome})
 
 class editar_aluno(UpdateView):
     model = Aluno
@@ -232,7 +229,7 @@ def apagar_candidato(request, pk, template_name='app/confirmacao_apagar_candidat
     if request.method=='POST':
         candidato.delete()
         return redirect('cadastro_candidatos')
-    return render(request, template_name, {'object':candidato})
+    return render(request, template_name, {'object':candidato.nome})
 
 def apagar_colaborador(request, pk, template_name='app/confirmacao_apagar_colaborador.html'):
     colaborador = get_object_or_404(Colaborador, pk=pk)
