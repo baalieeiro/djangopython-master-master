@@ -1,0 +1,132 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Cadastro de alunos</h1>
+</div>
+
+<form method="post" action="{% url 'novo_aluno' %}">{% csrf_token %}
+  <fieldset>
+    <legend>Dados do aluno</legend>
+      <table cellspacing="2">
+
+        <tr>
+          <td>
+
+            <label for="ra">Ra: </label>
+          </td>
+          <td align="left">
+            {{ form.ra }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+
+            <label for="nome">Nome: </label>
+          </td>
+          <td align="left">
+            {{ form.nome }}</br>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <label for="data_nascimento">Data de nascimento: </label>
+          </td>
+          <td align="left">
+            {{ form.data_nascimento }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+            <label for="email">Email: </label>
+          </td>
+          <td>
+            {{ form.email }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="endereco">Endereço: </label>
+          </td>
+          <td align="left">
+            {{ form.endereco }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="cidade">Cidade: </label>
+          </td>
+          <td align="left">
+            {{ form.cidade }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="estado">Estado: </label>
+          </td>
+          <td align="left">
+            {{ form.estado }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="telefone">Telefone: </label>
+          </td>
+          <td align="left">
+            {{ form.telefone }}</br>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="celular">Celular: </label>
+          </td>
+          <td>
+            {{ form.celular }}</br>
+          </td>
+        </tr>
+
+      </table>
+    </fieldset>
+  <fieldset>
+
+    <table>
+      <legend>Dados do curso</legend>
+      <tr>
+        <td>
+          <label for="curso">Curso: </label>
+        </td>
+        <td align="left">
+          <select id="curso" name="curso" value="{{ form.curso }}">
+            <option value="Administração">Administração</option>
+            <option value="Análise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+            <option value="Banco de Dados">Banco de Dados</option>
+            <option value="Jogos Digitais">Jogos Digitais</option>
+            <option value="Produção Multimídia">Produção Multimídia</option>
+            <option value="Redes de Computadores">Redes de Computadores</option>
+            <option value="Sistemas de Informação">Sistemas de Informação</option>
+          </select></br>
+        </td>
+      </tr>
+
+    </table>
+  </fieldset>
+<table>
+  <tr>
+    <td>
+        <input type="submit" value="Salvar" />
+    </td>
+  </tr>
+</table>
+
+</form>
+{% endblock %}
