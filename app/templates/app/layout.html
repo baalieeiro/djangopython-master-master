@@ -713,7 +713,17 @@
 </head>
 
 <body>
-  {{ nometeste }}
+  <div class="nav">
+    <ul>
+      <li class="dropdown">
+        <a href="" class="dropbtn">Usuario</a>
+        <div class="dropdown-content">
+          <a href="{% url 'listar_usuarios' %}">Lista</a>
+          <a href="{% url 'novo_usuario' %}">Novo</a>
+        </div>
+      </li>
+    </ul>
+  </div>
   <div class="nav">
     <ul>
       <li class="dropdown">
