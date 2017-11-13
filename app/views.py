@@ -28,6 +28,7 @@ def pagina_inicial(request):
         {
             'title':'Pagina inicial',
             'year':datetime.now().year,
+            'nometeste': 'RodrigoLuiz'
         })
     )
 
