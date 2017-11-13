@@ -94,6 +94,12 @@
     /* HEADER */
     /* HEADER */
     /* HEADER */
+    .navusuario {
+      height: 100px;
+      width: 50px;
+      float: left;
+    }
+
     nav {
 
     }
@@ -713,16 +719,18 @@
 </head>
 
 <body>
-  <div class="nav">
-    <ul>
-      <li class="dropdown">
-        <a href="" class="dropbtn">Usuario</a>
-        <div class="dropdown-content">
-          <a href="{% url 'listar_usuarios' %}">Lista</a>
-          <a href="{% url 'novo_usuario' %}">Novo</a>
-        </div>
-      </li>
-    </ul>
+  <div class="navusuario">
+    <div class="nav">
+      <ul>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Usuario</a>
+          <div class="dropdown-content">
+            <a href="{% url 'listar_usuarios' %}">Lista</a>
+            <a href="{% url 'novo_usuario' %}">Novo</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="nav">
     <ul>
@@ -752,13 +760,6 @@
         <div class="dropdown-content">
           <a href="{% url 'listar_cursos' %}">Lista</a>
           <a href="{% url 'novo_curso' %}">Novo</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="" class="dropbtn">Usuario</a>
-        <div class="dropdown-content">
-          <a href="{% url 'listar_usuarios' %}">Lista</a>
-          <a href="{% url 'novo_usuario' %}">Novo</a>
         </div>
       </li>
     </ul>
